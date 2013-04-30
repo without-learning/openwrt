@@ -5,7 +5,6 @@
 opkg update
 opkg install block-mount  kmod-usb-storage  kmod-fs-ext4    #安装usb支持
 
-
 # 第二步：openwrt 格盘
 opkg update
 opkg install e2fsprogs    #安装格盘软件
@@ -18,7 +17,6 @@ blkid                                                       #查看挂载的磁�
   /dev/mtdblock2: TYPE="squashfs"
   /dev/sda1: UUID="bad56542-43c6-4d80-adf7-b18db712c937" TYPE="ext4"
 
-
 # 第四步：前面几步都是准备，下面才是开始扩容。（假设是sda1，可能是sda，或者sda2等，其他参数都变）
 mount /dev/sda1 /mnt
 mkdir /tmp/root
@@ -26,7 +24,6 @@ mount -o bind / /tmp/root
 cp /tmp/root/* /mnt -a
 umount /tmp/root
 umount /mnt
-
 
 # 第五步：编辑 fstab  这个文件
 vim /etc/config/fstab 
