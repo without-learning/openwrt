@@ -1,5 +1,6 @@
           #Openwrt把软件安装到U盘配置方法
 
+推荐安装这个 Rom ： http://downloads.openwrt.org/attitude_adjustment/
 
 #第一步：安装一些工具
 opkg update
