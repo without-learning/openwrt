@@ -1,0 +1,9 @@
+
+安装 web 控制台
+opkg update
+opkg install luci
+
+
+
+/etc/init.d/uhttpd enable
+/etc/init.d/uhttpd start
