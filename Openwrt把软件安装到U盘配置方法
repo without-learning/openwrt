@@ -1,0 +1,67 @@
+          #Openwrt把软件安装到U盘配置方法
+
+
+#第一步：安装一些工具
+opkg update
+opkg install block-mount  kmod-usb-storage  kmod-fs-ext4    #安装usb支持
+
+
+# 第二步：openwrt 格盘
+opkg update
+opkg install e2fsprogs    #安装格盘软件
+mkfs.ext4 /dev/sda1       #格etx4
+mkfs.ext3 /dev/sda1       #格etx3
+mkfs.ext2 /dev/sda1       #格etx2
+
+# 第三步：查看路径  输入命令：blkid
+blkid                                                       #查看挂载的磁盘
+  /dev/mtdblock2: TYPE="squashfs"
+  /dev/sda1: UUID="bad56542-43c6-4d80-adf7-b18db712c937" TYPE="ext4"
+
+
+# 第四步：前面几步都是准备，下面才是开始扩容。（假设是sda1，可能是sda，或者sda2等，其他参数都变）
+mount /dev/sda1 /mnt
+mkdir /tmp/root
+mount -o bind / /tmp/root
+cp /tmp/root/* /mnt -a
+umount /tmp/root
+umount /mnt
+
+
+# 第五步：编辑 fstab  这个文件
+vim /etc/config/fstab 
+#-----------------------分割线-------------------------------
+config global automount
+        option from_fstab 1
+        option anon_mount 1
+
+config global autoswap
+        option from_fstab 1
+        option anon_swap 0
+
+config mount
+        option target   /           # 这里
+        option device   /dev/sda
+        option fstype   ext4
+        option options  rw,sync
+        option enabled  1           # 这里
+        option enabled_fsck 0
+
+config swap
+        option device   /dev/sda2
+        option enabled  0
+#-----------------------分割线-------------------------------
+
+# 第六步：设置开机自启动
+/etc/init.d/fstab enable 
+
+# 第七步：
+mv /etc/rc.d/S39usb /etc/rc.d/S19usb
+
+OK,这样重启一下就应该是成功了，df -m 就可以看到剩余容量了，随便装吧~
+
+
+
+
+
+ 
