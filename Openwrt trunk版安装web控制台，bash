@@ -1,0 +1,29 @@
+# =============================================
+安装 web 控制台
+opkg update
+opkg install luci
+
+
+
+/etc/init.d/uhttpd enable
+/etc/init.d/uhttpd start
+
+
+# =============================================
+ 
+1、OpenWRT安装bash及bash-completion：
+opkg update
+opkg install bash-completion
+
+2、更改用户shell为bash：
+cat /etc/passwd 
+root:AABBBDDDdDDDDDDDDDD42fmHU/:0:0:root:/root:/bin/ash
+root:AABBBDDDdDDDDDDDDDD42fmHU/:0:0:root:/root:/bin/bash   # 修改为
+
+3、配置bash-completion命令参数补全：
+echo '. /etc/bash_completion' >> /etc/bashrc
+
+4、在使用命令补全时如出现以下错误：-bash: /dev/fd/60: No such file or directory
+    创建/dev/fd链接：ln -s /proc/self/fd /dev/fd
+
+如果没有出错，不用执行第四步。
