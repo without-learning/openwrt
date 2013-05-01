@@ -40,3 +40,9 @@ opkg install tcpdump
 opkg install bind-dig
 
 # =====================    分割线    ========================
+
+opkg install iptables-mod-filter    # fix this probles: iptables v1.4.10: Couldn't load match `string':File not found
+opkg install iptables-mod-ipopt     # iptables v1.4.10: unknown option `--ttl-set'
+opkg install iptables-mod-u32  iptables-mod-ipset iptables-mod-nat-extra
+# =====================    分割线    ========================
+
