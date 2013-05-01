@@ -1,0 +1,79 @@
+# 自定义防火墙规则文件，过滤 错误的 dns 应答
+# firewall.user
+# ====================分割线==================================
+
+# This file is interpreted as shell script.
+# Put your custom iptables rules here, they will
+# be executed with each firewall (re-)start.
+
+
+# ignore fake dns answer -- start 
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|f3b9bb27|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d8eab30d|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d8ddbcb6|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d5a9fb23|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d35e4293|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d1dc1eae|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d1913632|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d1244921|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|d0381f2b|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|cf0c5862|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|cb620741|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|cba1e6ab|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|cab50755|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|ca6a0102|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|c043c606|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|a9840d67|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|9f6a794b|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|80797e8b|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|5d2e0859|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|4e10310f|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|480ecd68|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|480ecd63|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|422dfced|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|41a0db71|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|4168cafc|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|4042a3fb|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|4021632f|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|402158a1|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|3b1803ad|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|2e52ae44|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|253d369e|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|0807c62d|" --from 60 --to 180 -j DROP
+iptables -I INPUT -p udp --sport 53 -m string --algo bm --hex-string  "|042442b2|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|f3b9bb27|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d8eab30d|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d8ddbcb6|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d5a9fb23|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d35e4293|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d1dc1eae|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d1913632|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d1244921|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|d0381f2b|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|cf0c5862|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|cb620741|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|cba1e6ab|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|cab50755|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|ca6a0102|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|c043c606|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|a9840d67|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|9f6a794b|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|80797e8b|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|5d2e0859|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|4e10310f|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|480ecd68|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|480ecd63|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|422dfced|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|41a0db71|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|4168cafc|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|4042a3fb|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|4021632f|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|402158a1|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|3b1803ad|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|2e52ae44|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|253d369e|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|0807c62d|" --from 60 --to 180 -j DROP
+iptables -I FORWARD -p udp --sport 53 -m string --algo bm --hex-string  "|042442b2|" --from 60 --to 180 -j DROP
+
+# ignore fake dns answer -- end 
+
