@@ -1,13 +1,11 @@
 # =============================================
-安装 web 控制台
+# 安装 web 控制台
 opkg update
 opkg install luci
 
-
-
+# 开机启动
 /etc/init.d/uhttpd enable
 /etc/init.d/uhttpd start
-
 
 # =====================    分割线    ========================
  
@@ -28,7 +26,6 @@ echo '. /etc/bash_completion' >> /etc/bashrc
 
 如果没有出错，不用执行第四步。
 # =====================    分割线    ========================
-
 
 # 安装 nohup
 opkg install coreutils-nohup 
