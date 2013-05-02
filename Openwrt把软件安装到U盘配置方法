@@ -50,6 +50,14 @@ config swap
         option enabled  0
 #-----------------------分割线-------------------------------
 
+#========== /dev/sda2作为 swap =================== 不是必选
+mkswap /dev/sda2
+
+swapon /dev/sda2 试试
+
+或者  sqapon -a /dev/sda2
+#========== /dev/sda2作为 swap ===================
+
 # 第六步：设置开机自启动
 /etc/init.d/fstab enable 
 
@@ -57,7 +65,6 @@ config swap
 mv /etc/rc.d/S39usb /etc/rc.d/S19usb
 
 OK,这样重启一下就应该是成功了，df -m 就可以看到剩余容量了，随便装吧~
-
 
 
 
