@@ -33,8 +33,16 @@ opkg install coreutils-nohup
 # 安装 tcpdump
 opkg install tcpdump
 
+# 安装 nmap
+opkg install nmap
+
 # 安装 dig
 opkg install bind-dig
+
+# 安装 zip,unzip
+opkg install zip unzip
+
+
 
 # =====================    分割线    ========================
 
