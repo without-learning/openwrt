@@ -1,0 +1,20 @@
+网件R6300的硬件配置如下：
+  Netgear R6300
+  CPU：Broadcom BCM4706
+  RAM：128MB
+  Flash：128MB
+  千兆芯片：Broadcom BCM53125
+  2.4GHz：Broadcom BCM4331，最大450M
+  5GHz：Broadcom BCM4360，最大1300M
+  天线：6根
+  接口：
+    USB 2.0 * 1
+    1000M Lan *4
+    Wan * 1
+    Reset 按钮
+    电源开关
+    电源适配器接口
+    路由器右侧接口一览，从上到下分别是：
+    无线开关，方便快速打开关闭无线
+    WPS按钮
+  支持DD-wrt
