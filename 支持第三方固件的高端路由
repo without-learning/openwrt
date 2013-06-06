@@ -23,3 +23,6 @@
 WNDR4500
 WZR-D1800H
 RT-AC67U
+WNDR3700 v4 价格 450元
+Model     Version	Status	Target(s)	Platform	CPU Speed (MHz)	Flash (MB)	RAM (MB)	Wireless NIC	Wireless Standard	Wired Ports	VLAN Config	USB	Serial	JTAG
+WNDR3700  v4	    WIP?	  ar71xx	Atheros AR9344	560	        128	  128	  AR9344(2.4GHz) / AR9580(5GHz)	11a/b/g/n	5 gigE	Yes	1x v2.0	Yes
