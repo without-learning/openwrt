@@ -55,7 +55,7 @@ mkswap /dev/sda2
 
 swapon /dev/sda2 试试
 
-或者  sqapon -a /dev/sda2
+或者  swapon -a /dev/sda2
 #========== /dev/sda2作为 swap ===================
 
 # 第六步：设置开机自启动
